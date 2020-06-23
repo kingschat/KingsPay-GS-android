@@ -37,7 +37,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
 
-    implementation 'com.kingspay.gs:gs:test4'
+    implementation 'com.kingspay.gs:gs:v0.0.2'
 }
 
 
