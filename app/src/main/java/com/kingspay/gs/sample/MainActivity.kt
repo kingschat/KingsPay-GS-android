@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.kingspay.gs.lib.KingsPay
-import com.kingspay.gs.lib.Result
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,9 +25,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == REQUEST_TRANSACTION) {
-            data?.also { //TODO
-                val result = data.getStringExtra(Result.EXTRA_RESULT)
-                val paymentId = data.getStringExtra(Result.EXTRA_PAYMENT_ID)
+            data?.also {
+                val paymentId = data.getStringExtra(KingsPay.Result.EXTRA_PAYMENT_ID)
+                val result = data.getStringExtra(KingsPay.Result.EXTRA_RESULT)
+                if(result == KingsPay.Result.RESULT_SUCCESS) {
+                    //TODO
+                }
             }
             finish()
         } else super.onActivityResult(requestCode, resultCode, data)

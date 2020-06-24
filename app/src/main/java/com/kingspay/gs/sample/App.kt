@@ -7,6 +7,6 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        KingsPay.initialize(this)
+        KingsPay.initialize(this, KingsPay.Environment.PRODUCTION)
     }
 }
