@@ -3,7 +3,7 @@ package com.kingspay.gs.sample
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.kingspay.gs.lib.KingsPay
+import com.kingspay.gs.KingsPay
 
 class MainActivity : AppCompatActivity() {
 

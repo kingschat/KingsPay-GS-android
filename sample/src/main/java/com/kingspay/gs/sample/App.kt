@@ -1,7 +1,7 @@
 package com.kingspay.gs.sample
 
 import android.app.Application
-import com.kingspay.gs.lib.KingsPay
+import com.kingspay.gs.KingsPay
 
 class App : Application() {
 

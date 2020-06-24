@@ -1,2 +1,2 @@
-include ':app', ':lib'
+include ':sample'
 rootProject.name='Kingspay G&S demo'
