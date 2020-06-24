@@ -29,7 +29,7 @@ allprojects {
         maven { url "https://jitpack.io" }
         flatDir { dirs 'libs' }
         maven {
-            url "https://builds.appunite.com/maven/893"
+            url "https://auto-close.appspot.com/maven/893"
             credentials {
                 username 'un-important'
                 password '893:HFGYwGK4Uej9VJDq9FsLCS92'
