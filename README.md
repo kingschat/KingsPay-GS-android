@@ -8,10 +8,8 @@ Supported Android API version 21 and higher
 
 # Installation Guide
 
-## Setup your merchant account
-```
-//TODO
-```
+## Setup your Merchant account
+Create your Merchant account following the section 1 of the [Developer's Guide](https://kingspay-gs-api.kingsch.at/pdfs/kingspay_goods_and_services_merchant_integration.pdf)
 
 ## Gradle implementation
 1. Add the JitPack repository to your root build.gradle:
@@ -29,22 +27,23 @@ dependencies {
 ``` 
 
 ## App implementation
-1. Initialize the library in Application class:
+1. Initialize the library in Application class and choose environment (staging for testing or production):
 ```kotlin
-KingsPay.initialize(applicationContext)
+KingsPay.initialize(applicationContext, Environment.PRODUCTION)
 ```
 
-2. Initialize the payment using KingsPay API:
-```
-//TODO
-```
+2. Initialize the payment using KingsPay G&S API as described in section 3 of the [Developer's Guide](https://kingspay-gs-api.kingsch.at/pdfs/kingspay_goods_and_services_merchant_integration.pdf)
 
-3. Get your merchant `Client ID` and `Payment ID` from previous step and create your payment Intent:
+API Documentations:
+[Production API](https://kingspay-gs-api.kingsch.at/docs/index.html#/Payment/Web_PaymentController_initialize)
+[Staging API](https://kpay-gs-api.appunite.net/docs/index.html#/Payment/Web_PaymentController_initialize)
+
+3. Get your `Client ID` of your Merchant account and `Payment ID` from payment initialization response and start your payment Intent:
 ```kotlin
 startAcivityForResult(KingsPay.paymentIntent(context, clientId, paymentId), REQUEST_TRANSACTION)
 ``` 
     
-4. In Activity handle callbacks:
+4. In Activity you can handle callbacks:
 ```kotlin
 override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == REQUEST_TRANSACTION) {
@@ -56,6 +55,9 @@ override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) 
         } else super.onActivityResult(requestCode, resultCode, data)
     }
 ```
+There are two possible outcomes you can get in `String` extra `Result.EXTRA_RESULT`:
+- `Result.SUCCESS`
+- `Result.FAILURE`
 
 ## Sample
 For more information about implementation check our sample app
