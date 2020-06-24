@@ -29,7 +29,7 @@ dependencies {
 ## App implementation
 1. Initialize the library in Application class and choose environment (staging for testing or production):
 ```kotlin
-KingsPay.initialize(applicationContext, Environment.PRODUCTION)
+KingsPay.initialize(applicationContext, KingsPay.Environment.PRODUCTION)
 ```
 
 2. Initialize the payment using KingsPay G&S API as described in section 3 of the [Developer's Guide](https://kingspay-gs-api.kingsch.at/pdfs/kingspay_goods_and_services_merchant_integration.pdf)
@@ -48,16 +48,16 @@ startAcivityForResult(KingsPay.paymentIntent(context, clientId, paymentId), REQU
 override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == REQUEST_TRANSACTION) {
             data?.also {
-                val result = data.getStringExtra(Result.EXTRA_RESULT)
-                val paymentId = data.getStringExtra(Result.EXTRA_PAYMENT_ID)
+                val result = data.getStringExtra(KingsPay.Result.EXTRA_RESULT)
+                val paymentId = data.getStringExtra(KingsPay.Result.EXTRA_PAYMENT_ID)
             }
             finish()
         } else super.onActivityResult(requestCode, resultCode, data)
     }
 ```
-There are two possible outcomes you can get in `String` extra `Result.EXTRA_RESULT`:
-- `Result.SUCCESS`
-- `Result.FAILURE`
+There are two possible outcomes you can get in `String` extra `KingsPay.Result.EXTRA_RESULT`:
+- `KingsPay.Result.SUCCESS`
+- `KingsPay.Result.FAILURE`
 
 ## Sample
 For more information about implementation check our sample app
