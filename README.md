@@ -1,6 +1,6 @@
 # KingsPay-GS-android
 KingsPay for Goods &amp; Services for Android
-[![Apache 2.0 License](https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0.html) [![Release](https://jitpack.io/v/kingschat/KingsPay-GS-android.svg)](https://jitpack.io/#kingschat/KingsPay-GS-android)
+[![Apache 2.0 License](https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 Written in Kotlin 1.3.72
 
@@ -12,17 +12,23 @@ Supported Android API version 21 and higher
 Create your Merchant account following the section 1 of the [Developer's Guide](https://kingspay-gs-api.kingsch.at/pdfs/kingspay_goods_and_services_merchant_integration.pdf)
 
 ## Gradle implementation
-1. Add the JitPack repository to your root build.gradle:
+1. Add the following repository to your root build.gradle:
 ```gradle
 repositories {
-    maven { url "https://jitpack.io" }
+    maven {
+            url "https://auto-close.appspot.com/maven/893"
+            credentials {
+                username 'un-important'
+                password '893:HFGYwGK4Uej9VJDq9FsLCS92'
+            }
+        }
 }
 ```
 
 2. Add the dependency to your sub build.gradle:
 ```gradle
 dependencies {
-    compile 'com.github.kingschat:KingsPay-GS-android:{latest-version}'
+    compile 'com.kingspay.gs:gs:v0.0.4'
 }
 ``` 
 
