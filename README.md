@@ -12,9 +12,12 @@ Supported Android API version 21 and higher
 Create your Merchant account following the section 1 of the [Developer's Guide](https://kingspay-gs-api.kingsch.at/pdfs/kingspay_goods_and_services_merchant_integration.pdf)
 
 ## Gradle implementation
-1. Add the following repository to your root build.gradle:
+1. Add the following repositories to your root build.gradle:
 ```gradle
 repositories {
+    google()
+    jcenter()
+    maven { url "https://jitpack.io" }
     maven {
             url "https://auto-close.appspot.com/maven/893"
             credentials {
