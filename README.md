@@ -31,7 +31,7 @@ repositories {
 2. Add the dependency to your sub build.gradle:
 ```gradle
 dependencies {
-    implementation 'com.kingspay.gs:gs:v0.0.7'
+    implementation 'com.kingspay.gs:gs:v0.0.8'
 }
 ``` 
 
