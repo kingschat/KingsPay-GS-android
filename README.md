@@ -31,7 +31,7 @@ repositories {
 2. Add the dependency to your module-level build.gradle:
 ```gradle
 dependencies {
-    implementation 'com.kingspay.gs:gs:v0.1.0'
+    implementation 'com.kingspay.gs:gs:v0.1.1'
 }
 ``` 
 
