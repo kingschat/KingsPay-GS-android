@@ -17,6 +17,7 @@ Create your Merchant account following the section 1 of the [Developer's Guide](
 repositories {
     google()
     jcenter()
+    mavenCentral()
     maven { url "https://jitpack.io" }
     maven {
             url "https://auto-close.appspot.com/maven/893"
